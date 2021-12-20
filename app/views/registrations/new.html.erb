@@ -1,3 +1,17 @@
 <h1>Sign Up</h1>
 
-<%= @user %>
+<%= form_with model: @user, url: sign_up_path do |form| %>
+  <div class="mb-3">
+    <%= form.text_field :email, class: "form-control", placeholder: "name@example.com" %>
+  </div>
+  <div class="mb-3">
+    <%= form.password_field :password, class: "form-control", placeholder: "Enter Password" %>
+  </div>
+  <div class="mb-3">
+    <%= form.password_field :password_confirmation, class: "form-control", placeholder: "Re-typ Your Password" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.submit "Get Started!", class: "btn btn-primary" %>
+  </div>
+<% end %>
